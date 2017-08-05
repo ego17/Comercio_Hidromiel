@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using comercio.Models;
+using System.IO;
 
 namespace comercio.Areas.admin.Controllers
 {
@@ -123,5 +124,59 @@ namespace comercio.Areas.admin.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        public JsonResult Adjuntar(int ProductoId, HttpPostedFileBase documento)
+        {
+            var respuesta = new Models.ResponseModel
+            {
+                respuesta = true,
+                error = ""
+            };
+
+            if (documento != null)
+            {
+                string adjunto = DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetExtension(documento.FileName);
+                documento.SaveAs(Server.MapPath("~/ImgProductos/" + adjunto));
+
+                db.ProductoImagen.Add(new ProductoImagen { ProductoId = ProductoId, Imagen = adjunto, Titulo = "Ejemplo", Descripcion = "Ejemplo" });
+                db.SaveChanges();
+
+            }
+            else
+            {
+                respuesta.respuesta = false;
+                respuesta.error = "Debe adjuntar un documento";
+            }
+
+            return Json(respuesta);
+        }
+
+        public PartialViewResult Adjuntos(int ProductoId)
+        {
+            return PartialView(db.ProductoImagen.Where(x => x.ProductoId == ProductoId).ToList());
+        }
+
+        public JsonResult EliminarImagen(int ProductoImagenId)
+        {
+            var rpt = new Models.ResponseModel()
+            {
+                respuesta = true,
+                error = ""
+            };
+            var img = db.ProductoImagen.Find(ProductoImagenId);
+
+            if (System.IO.File.Exists(Server.MapPath("~/ImgProductos/" + img.Imagen)))
+                System.IO.File.Delete(Server.MapPath("~/ImgProductos/" + img.Imagen));
+
+            db.ProductoImagen.Remove(img);
+            db.SaveChanges();
+
+            return Json(rpt);
+        }
+
+
+
+
     }
 }

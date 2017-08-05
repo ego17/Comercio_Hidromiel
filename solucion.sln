@@ -5,25 +5,25 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "comercio", "comercio\comercio.csproj", "{2A84B5C4-5D31-465A-B1D5-30FF899B5A80}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Plantilla ego", "..\..\..\..\Downloads\Plantilla ego\", "{F9F82EF5-2C23-4DBB-95B9-E6DBADD550CD}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Plantilla ego", "..\..\..\..\..\Downloads\Plantilla ego\", "{F9F82EF5-2C23-4DBB-95B9-E6DBADD550CD}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_49473"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Downloads\Plantilla ego\"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\Downloads\Plantilla ego\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49473\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_49473"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Downloads\Plantilla ego\"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\Downloads\Plantilla ego\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49473\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "49473"
-		SlnRelativePath = "..\..\..\..\Downloads\Plantilla ego\"
+		SlnRelativePath = "..\..\..\..\..\Downloads\Plantilla ego\"
 	EndProjectSection
 EndProject
 Global
